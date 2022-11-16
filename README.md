@@ -31,12 +31,13 @@ For this walkthrough, you should have the following prerequisites:
 
     An AWS account
     An AWS Identity and Access Management (IAM) user with access to the following services and to follow the solution presented in this blog post, you should be familiar with the following AWS services and features:
-    Amazon S3
-    AWS Lambda
-    Amazon rekognition
-    Amazon SNS
-    Amazon Dynamodb
-    AWS Cloudwatch
-    AWS Cloudtrail
-    AWS IAM
+    
+    1. [Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
+    2. AWS Lambda
+    3. Amazon rekognition
+    4. Amazon SNS
+    5. Amazon Dynamodb
+    6. AWS Cloudwatch
+    7. AWS Cloudtrail
+    8. AWS IAM
 
