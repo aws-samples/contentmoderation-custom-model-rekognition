@@ -1,43 +1,149 @@
 
 README.md
 
-A Video Content Moderation Technique with a Custom Model to identify the plagiarism in short Video Applications
+**A Video Content Moderation Technique with a Custom Model to identify the plagiarism in short Video Applications**
 
 When the short Video Applications cross millions of users, it becomes difficult to monitor, assess, and filter uploaded videos based on a predetermined set of rules. Content moderation technique is inevitable as it helps to maintain and enforce community guidelines.This Solution provides a Content Moderation pipeline that will ensure that their end-users are not exposed to potentially inappropriate or offensive material, such as nudity, violence, drug use, adult products, or disturbing images. Also it contains a Custom model to identify Plagiarism which means it helps you to identify any video being uploaded on to our application which is created using another platform. We tag these videos based on the logo of the application that created the Video.
 
-Solutions Overview
+**Solutions Overview**
 
 arch.png<img width="834" alt="image" src="https://user-images.githubusercontent.com/117374837/202127411-857697bb-dc9c-466c-9ecb-378e0a8988e1.png">
 
 
 The Solution workflow contains the following steps.
 
-Part-1 ContentModeration Pipeline
+**Part-1 ContentModeration Pipeline**
 
     When any short video ( Maximum 10 MB in this case) gets uploaded into the S3 bucket, the lambda function calls the StartContentModeration API call on the Video.
     Once the StartContentModeration is invoked by the Lambda function, a JobId will be created and that is being pushed onto the Simple Notification Service. The Amazon SNS then triggers the next Lambda function that invokes the GetContentModeration API once the Job has been completed.
     If any Moderation Labels are detected the the video will be copied to a Destination bucket that will contain all the S3 buckets with Moderated contents
 
-Part2- Custom model to Identify the plagiarism.
+**Part2- Custom model to Identify the plagiarism.**
 
     The first Lambda function that invokes StartContentModeration API also contains the code to create an Elemental media Convert Job that converts the video into frames and and saves the first frame to an Intermediate S3 bucket that can be passed through Custom model project that is running on Amazon Rekognition.
     The elemental Media Convert job then converts the videos into frames and the First frame is analyzed against the Custom Model to Detect Labels.
     There is a Custom Model that is running in the AWS Rekognition, that is trained to detect the Logo of Mojo and Tiktok.
     In case any trained logos are detected it will then be moved to a second Destination bucket.
 
-Prerequisites
+**Prerequisites**
 
 For this walkthrough, you should have the following prerequisites:
 
     An AWS account
     An AWS Identity and Access Management (IAM) user with access to the following services and to follow the solution presented in this blog post, you should be familiar with the following AWS services and features:
     
-    1. [Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
-    2. AWS Lambda
+    1. [Amazon S3]:(https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
+    2. [AWS Lambda](https://docs.aws.amazon.com/lambda/index.html)
     3. Amazon rekognition
     4. Amazon SNS
     5. Amazon Dynamodb
     6. AWS Cloudwatch
     7. AWS Cloudtrail
     8. AWS IAM
+
+
+**Creating Custom Modelling for Plagiarism Detection on Amazon Rekognition**
+
+I have explained the steps below to create a Custom Rekognition project via AWS Console, Creating  Dataset by uploading the images from the local machine , Labelling it via bounding boxes from the console and Starting the model.
+
+**Creating a custom Model project in Amazon Rekognition console**
+
+1.	Login to AWS Console and search for Amazon Rekognition. Go to Use Custom Labels under Custom Labels.
+
+2.	Click on "Projects" on the left 
+
+ 
+ a.png![image](https://user-images.githubusercontent.com/117374837/202370197-0986f523-4954-4b82-903e-e668473ae25b.png)
+ 
+
+3.	Click on Create Project
+ 
+
+b.png![image](https://user-images.githubusercontent.com/117374837/202370272-50e12d1f-9ed9-4d0e-b0ef-9cf91fcc86d8.png)
+
+
+4.	Give a name to the Project and click on  Create Project 
+
+
+c.png![image](https://user-images.githubusercontent.com/117374837/202370443-43717b47-1670-4423-be90-7103e2aa8944.png)
+
+
+
+**Creating a Dataset and Labelling it**
+
+
+1.	Click on the Name of the Project and click on “Create Dataset”
+        
+
+d.png![image](https://user-images.githubusercontent.com/117374837/202371107-2a6c5b77-42f9-4b4f-b91a-4cdaa1349ab9.png)
+
+         
+2.	Select the Option “Start with a Single Dataset” for this Demo and Choose the Option “Upload Images from your Computer”
+  
+ 
+ e.png![image](https://user-images.githubusercontent.com/117374837/202376616-e62afeb2-7cb2-4147-bd21-dc3077e80756.png)
+
+
+3.	Download the images given in the folder “images” which includes the images of tiktok , sharechat  and Moj logos collected from Internet to your local machine and then upload these images using Add Images.
+
+ 
+ f.png![image](https://user-images.githubusercontent.com/117374837/202376686-3210051b-c58f-40e9-bc0f-c96c75ee87fa.png)
+ 
+
+4.	You will get a window like this and click on Choose Files and after selecting the files, Click Upload Images.
+
+
+ g.png![image](https://user-images.githubusercontent.com/117374837/202376907-f6a58374-276c-4558-b0db-81c0045c9264.png)
+
+
+   **Labelling the Images**
+
+1.	Click on Start Labelling
+
+
+h.png![image](https://user-images.githubusercontent.com/117374837/202376963-26a982dc-cf5b-4a4e-bb5f-ddd4fdf23a88.png)
+
+
+2.	Click on Add Labels and add labels with Names Tiktok, Mojo and sharechat
+
+
+i.png![image](https://user-images.githubusercontent.com/117374837/202376998-137f2603-6fd1-4c49-b885-5d7ae87bb265.png)
+
+
+3.	Select the Images and Click on Draw Bounding boxes. 
+  
+
+j.png![image](https://user-images.githubusercontent.com/117374837/202377068-2a98a926-338b-4baa-b88c-15c5997ef85c.png)
+
+
+4.	After drawing bounding boxes on all the images, click Done.
+
+**Training the Custom Model**
+
+1. Now we will need to train our model and click on Tran model which is the third option in the screenshot. It will take some time ( 30 minutes to 24 hours ) based on the number of images.
+
+
+k.png![image](https://user-images.githubusercontent.com/117374837/202377132-9bdc7c8f-55f4-43bb-b219-47fa65c34b8b.png)
+
+
+2.	Now  click on “Check Metrics under the “Evaluating your model to check the performance.
+
+
+ l.png![image](https://user-images.githubusercontent.com/117374837/202377201-3f6ad53a-78ae-4674-8c8a-9f1b56c69039.png)
+
+Refer: https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/im-metrics-use.html
+ 
+3. Now go to “Use Model” and Click on Start Model. You can choose the number of Inference units and as the number of inference unit increases, the throughout also increases.
+
+
+m.png![image](https://user-images.githubusercontent.com/117374837/202377338-a1545405-71bf-4ee0-b1d6-2e0425f8fe9b.png)
+ 
+
+
+
+
+
+
+
+
 
