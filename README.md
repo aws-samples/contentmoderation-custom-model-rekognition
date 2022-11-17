@@ -81,19 +81,19 @@ d.png![image](https://user-images.githubusercontent.com/117374837/202371107-2a6c
 2.	Select the Option “Start with a Single Dataset” for this Demo and Choose the Option “Upload Images from your Computer”
   
  
- e.png![image](https://user-images.githubusercontent.com/117374837/202376616-e62afeb2-7cb2-4147-bd21-dc3077e80756.png)
+e.png![image](https://user-images.githubusercontent.com/117374837/202376616-e62afeb2-7cb2-4147-bd21-dc3077e80756.png)
 
 
 3.	Download the images given in the folder “images” which includes the images of tiktok , sharechat  and Moj logos collected from Internet to your local machine and then upload these images using Add Images.
 
  
- f.png![image](https://user-images.githubusercontent.com/117374837/202376686-3210051b-c58f-40e9-bc0f-c96c75ee87fa.png)
+f.png![image](https://user-images.githubusercontent.com/117374837/202376686-3210051b-c58f-40e9-bc0f-c96c75ee87fa.png)
  
 
 4.	You will get a window like this and click on Choose Files and after selecting the files, Click Upload Images.
 
 
- g.png![image](https://user-images.githubusercontent.com/117374837/202376907-f6a58374-276c-4558-b0db-81c0045c9264.png)
+g.png![image](https://user-images.githubusercontent.com/117374837/202376907-f6a58374-276c-4558-b0db-81c0045c9264.png)
 
 
    **Labelling the Images**
