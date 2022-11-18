@@ -29,17 +29,18 @@ The Solution workflow contains the following steps.
 
 For this walkthrough, you should have the following prerequisites:
 
-    An AWS account
-    An AWS Identity and Access Management (IAM) user with access to the following services and to follow the solution presented in this blog post, you should be familiar with the following AWS services and features:
+<a href="https://docs.aws.amazon.com/accounts/latest/reference/accounts-welcome.html">An AWS account</a> <br>
+
+An AWS Identity and Access Management (IAM) user with access to the following services and to follow the solution presented in this blog post, you should be familiar with the following AWS services and features:
     
-    1. [Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
-    2. [AWS Lambda](https://docs.aws.amazon.com/lambda/index.html)
-    3. [Amazon Rekognition](https://docs.aws.amazon.com/rekognition/index.html)
-    4. [Amazon SNS](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/sns-examples.html)
-    5. [Amazon Dynamodb](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStartedDynamoDB.html)
-    6. [AWS Cloudwatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html)
-    7. [AWS Cloudtrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/how-cloudtrail-works.html)
-    8. [AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
+<a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">Amazon S3</a><br>
+<a href="https://docs.aws.amazon.com/toolkit-for-eclipse/v1/user-guide/lambda-tutorial.html">AWS Lambda</a><br>
+<a href="https://docs.aws.amazon.com/managedservices/latest/userguide/rekognition.html">Amazon rekognition </a><br>
+<a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/sns-examples.html">Amazon SNS </a><br>
+<a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html">Amazon Dynamodb</a><br>
+<a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_architecture.html">AWS Cloudwatch</a><br> 
+<a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html">AWS Cloudtrail </a><br>
+<a href="https://docs.aws.amazon.com/iam/index.html">AWS IAM</a><br>
 
 
 **Creating Custom Modelling for Plagiarism Detection on Amazon Rekognition**
