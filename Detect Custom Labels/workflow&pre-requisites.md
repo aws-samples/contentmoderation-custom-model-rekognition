@@ -1,4 +1,4 @@
-**Part2 - Custom Modelling - Plagiraism checker **
+### **Part2 - Custom Modelling - Plagiraism checker**
 
 In the "Start Content Moderation" section, a transcoding job is initiated to convert the Video into frames. The video will be saved onto an intermediate bucket with mp4 extension added to its name and also the first frame of the video will be saved as .0000000.jpg. This image is passed to the Custom Rekognition model for Label detection. (Here only first frame is considered as the Platform logo will be present on all the frames of the video).
 
