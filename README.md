@@ -60,13 +60,13 @@ Below are the steps to create a Custom Rekognition project via AWS Console, Crea
 3.	Click on Create Project
  
 
-b.png![image](https://user-images.githubusercontent.com/117374837/202370272-50e12d1f-9ed9-4d0e-b0ef-9cf91fcc86d8.png)
+![image](https://user-images.githubusercontent.com/117374837/202370272-50e12d1f-9ed9-4d0e-b0ef-9cf91fcc86d8.png)
 
 
 4.	Give a name to the Project and click on  Create Project 
 
 
-c.png![image](https://user-images.githubusercontent.com/117374837/202370443-43717b47-1670-4423-be90-7103e2aa8944.png)
+![image](https://user-images.githubusercontent.com/117374837/202370443-43717b47-1670-4423-be90-7103e2aa8944.png)
 
 
 
@@ -76,27 +76,27 @@ c.png![image](https://user-images.githubusercontent.com/117374837/202370443-4371
 1.	Click on the Name of the Project and click on “Create Dataset”
         
 
-d.png![image](https://user-images.githubusercontent.com/117374837/202371107-2a6c5b77-42f9-4b4f-b91a-4cdaa1349ab9.png)
+![image](https://user-images.githubusercontent.com/117374837/202371107-2a6c5b77-42f9-4b4f-b91a-4cdaa1349ab9.png)
 
          
 2.	Select the Option “Start with a Single Dataset” for this Demo and Choose the Option “Upload Images from your Computer”
   
  
 
-e.png![image](https://user-images.githubusercontent.com/117374837/202376616-e62afeb2-7cb2-4147-bd21-dc3077e80756.png)
+![image](https://user-images.githubusercontent.com/117374837/202376616-e62afeb2-7cb2-4147-bd21-dc3077e80756.png)
 
 
 3.	Download the images given in the folder “images” which includes the images of tiktok , sharechat  and Moj logos collected from Internet to your local machine and then upload these images using Add Images.
 
  
-f.png![image](https://user-images.githubusercontent.com/117374837/202376686-3210051b-c58f-40e9-bc0f-c96c75ee87fa.png)
+![image](https://user-images.githubusercontent.com/117374837/202376686-3210051b-c58f-40e9-bc0f-c96c75ee87fa.png)
  
 
 4.	You will get a window like this and click on Choose Files and after selecting the files, Click Upload Images.
 
 
 
-g.png![image](https://user-images.githubusercontent.com/117374837/202376907-f6a58374-276c-4558-b0db-81c0045c9264.png)
+![image](https://user-images.githubusercontent.com/117374837/202376907-f6a58374-276c-4558-b0db-81c0045c9264.png)
 
 
    **Labelling the Images**
@@ -104,19 +104,19 @@ g.png![image](https://user-images.githubusercontent.com/117374837/202376907-f6a5
 1.	Click on Start Labelling
 
 
-h.png![image](https://user-images.githubusercontent.com/117374837/202376963-26a982dc-cf5b-4a4e-bb5f-ddd4fdf23a88.png)
+![image](https://user-images.githubusercontent.com/117374837/202376963-26a982dc-cf5b-4a4e-bb5f-ddd4fdf23a88.png)
 
 
 2.	Click on Add Labels and add labels with Names Tiktok, Mojo and sharechat
 
 
-i.png![image](https://user-images.githubusercontent.com/117374837/202376998-137f2603-6fd1-4c49-b885-5d7ae87bb265.png)
+![image](https://user-images.githubusercontent.com/117374837/202376998-137f2603-6fd1-4c49-b885-5d7ae87bb265.png)
 
 
 3.	Select the Images and Click on Draw Bounding boxes. 
   
 
-j.png![image](https://user-images.githubusercontent.com/117374837/202377068-2a98a926-338b-4baa-b88c-15c5997ef85c.png)
+![image](https://user-images.githubusercontent.com/117374837/202377068-2a98a926-338b-4baa-b88c-15c5997ef85c.png)
 
 
 4.	After drawing bounding boxes on all the images, click Done.
@@ -127,18 +127,18 @@ j.png![image](https://user-images.githubusercontent.com/117374837/202377068-2a98
 
 
 
-k.png![image](https://user-images.githubusercontent.com/117374837/202377132-9bdc7c8f-55f4-43bb-b219-47fa65c34b8b.png)
+![image](https://user-images.githubusercontent.com/117374837/202377132-9bdc7c8f-55f4-43bb-b219-47fa65c34b8b.png)
 
 
 2.	Now  click on “Check Metrics under the “Evaluating your model to check the performance.
 
 
-l.png![image](https://user-images.githubusercontent.com/117374837/202377201-3f6ad53a-78ae-4674-8c8a-9f1b56c69039.png)
+![image](https://user-images.githubusercontent.com/117374837/202377201-3f6ad53a-78ae-4674-8c8a-9f1b56c69039.png)
 
 Refer: https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/im-metrics-use.html
  
 3. Now go to “Use Model” and Click on Start Model. You can choose the number of Inference units and as the number of inference unit increases, the throughout also increases.
 
 
-m.png![image](https://user-images.githubusercontent.com/117374837/202377338-a1545405-71bf-4ee0-b1d6-2e0425f8fe9b.png)
+![image](https://user-images.githubusercontent.com/117374837/202377338-a1545405-71bf-4ee0-b1d6-2e0425f8fe9b.png)
  
