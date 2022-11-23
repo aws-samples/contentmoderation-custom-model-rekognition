@@ -6,7 +6,7 @@ In this section, we query the custom model using [DetectCustomLabels](https://do
 
 Given below is the sample output of this Lambda function when the uploaded video contains a sharechat logo in its first frame
 
-```
+```json
 {
 	'CustomLabels': [{
 		'Name': 'sharechat',
