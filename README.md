@@ -54,7 +54,7 @@ Below are the steps to create a Custom Rekognition project via AWS Console, Crea
 2.	Click on "Projects" on the left 
 
  
-[image](https://user-images.githubusercontent.com/117374837/202370197-0986f523-4954-4b82-903e-e668473ae25b.png)
+![image](https://user-images.githubusercontent.com/117374837/202370197-0986f523-4954-4b82-903e-e668473ae25b.png)
  
 
 3.	Click on Create Project
