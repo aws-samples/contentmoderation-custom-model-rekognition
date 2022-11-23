@@ -42,7 +42,7 @@ def lambda_handler(event, context):
 
     if (len(response["CustomLabels"])):
         copy_source = {
-            'Bucket': 'aws-rekognition-ab2',
+            'Bucket': 'aws-rekognition-bucketxx',
             'Key': final_key
         }
         s3.meta.client.copy(copy_source, 'plagiarismchecker', final_key)
