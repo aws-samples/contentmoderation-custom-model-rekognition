@@ -37,3 +37,4 @@ Sample output of the function when the video contains the Moderation Labels and 
 		}
 	}]
 ```
+Upon retrieving the analysis results, the data is being written to a DynamoDB table : "Censored" for reporting purposes.
