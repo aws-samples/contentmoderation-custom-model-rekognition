@@ -1,9 +1,12 @@
-### **Workflow**
+## **Workflow**
 
 #### **Pre-requisities :**
-1. 
+1. [Obtain your region specific Mediaconvert endpoint url](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/emc-examples-getendpoint.html), which is used to create the mediaconvert sdk client to submit the transcoding job.
+2. Create a SNS topic - used as [Notification channel](https://docs.aws.amazon.com/rekognition/latest/APIReference/API_NotificationChannel.html). Also, create a role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic.
+3. Create a S3 bucket -  used to store output of elemental media convert job.
 
-This section accomodates 2 parts :
+
+This section accomodates 2 functionalities :
 1. Start an asynchronous job to detect inappropriate, unwanted, or offensive content in a stored video using [StartContentModeration](https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartContentModeration.html) API.
 2. Convert video into frames using a Transcoding job using [CreateJob](https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html#jobspost) API call.
 
