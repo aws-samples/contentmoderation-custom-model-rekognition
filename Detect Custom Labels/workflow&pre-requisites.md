@@ -34,4 +34,4 @@ Given below is the sample output of this Lambda function when the uploaded video
 }
 ``` 
 
-Based on the detected labels and the plagiarism chec, the video files are stored in the relevant buckets.
+Based on the detected labels and the plagiarism check, the video files are stored in the relevant buckets.
