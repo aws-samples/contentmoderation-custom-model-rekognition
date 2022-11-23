@@ -1,8 +1,14 @@
 **Workflow and Outputs**
 
-This Lambda function invokes [StartContentModeration](https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartContentModeration.html) API which starts asynchronous detection of inappropriate, unwanted, or offensive content in a stored video. Once the job is successfully submitted, a JobID is returned back to the user. In order to track the completion status, we use a notification channel using Simple Notification Service to Trigger the next Lambda function to execute the [GetContentModeration](https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetContentModeration.html) API to retrieve the results.
+This section accomodates 2 parts :
+1. Start an asynchronous job to detect inappropriate, unwanted, or offensive content in a stored video using [StartContentModeration](https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartContentModeration.html) API.
+2. Convert video into frames using a Transcoding job using [CreateJob](https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html#jobspost) API call
 
-Please find the JobID output from the Lambda function which is passed to SNS.
+Workflow :
+
+1. This Lambda function invokes [StartContentModeration](https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartContentModeration.html) API which starts asynchronous detection of inappropriate, unwanted, or offensive content in a stored video. Once the job is successfully submitted, a JobID is returned back to the user. In order to track the completion status, we use a notification channel using Simple Notification Service to Trigger the next Lambda function to execute the [GetContentModeration](https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetContentModeration.html) API to retrieve the results.
+
+Sample output of StartContentModeration API :
 
 ```json
 {
@@ -21,3 +27,4 @@ Please find the JobID output from the Lambda function which is passed to SNS.
 }
 ```
 
+2. Cre
