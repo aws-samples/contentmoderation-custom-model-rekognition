@@ -1,6 +1,6 @@
 ## **Workflow**
 
-#### **Pre-requisities :**
+
 
 Post the completion of the content moderation job from section "Start Content Moderation", Rekognition posts the completion status of the job to the SNS topic which is inturn subscribed by this Lambda function. This section is responsible for retrieving the analysis results of the Video analysis started by StartContentModeration job in the previous section.
 
