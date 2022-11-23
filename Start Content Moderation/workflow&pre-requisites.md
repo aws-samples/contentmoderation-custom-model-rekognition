@@ -4,7 +4,9 @@
 
 Please find the JobID output from the Lambda function which is passed to SNS.
 
+```json
 { "JobId": "3ffd9326c88e8194b35cf102644a2b8fb587684a2617820ad0fe593ac75ae525", "ResponseMetadata": { "RequestId": "7029e5f9-24f7-4b99-9ac3-4e44806af6da", "HTTPStatusCode": 200, "HTTPHeaders": { "x-amzn-requestid": "7029e5f9-24f7-4b99-9ac3-4e44806af6da", "content-type": "application/x-amz-json-1.1", "content-length": "76", "date": "Thu, 22 Sep 2022 09:02:57 GMT" }, "RetryAttempts": 0 } }
+```
 
   As mentioned, Once the JobID is generated the SNS triggers the second Lambda function Lambda2 and it invokes the GetContentModeration API. I have quoted the sample output of the function when the video contains the Moderation Labels and when a moderation label is detected the Video is moved to a different Destination bucket which is further passed for a human review.
 
