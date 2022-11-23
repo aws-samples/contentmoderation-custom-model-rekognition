@@ -45,7 +45,7 @@ An AWS Identity and Access Management (IAM) user with access to the following se
 
 **Creating Custom Modelling for Plagiarism Detection on Amazon Rekognition**
 
-I have explained the steps below to create a Custom Rekognition project via AWS Console, Creating  Dataset by uploading the images from the local machine , Labelling it via bounding boxes from the console and Starting the model.
+Below are the steps to create a Custom Rekognition project via AWS Console, Creating  Dataset by uploading the images from the local machine , Labelling it via bounding boxes from the console and Starting the model.
 
 **Creating a custom Model project in Amazon Rekognition console**
 
