@@ -1,6 +1,6 @@
 **Workflow and Outputs**
 
-This Lambda function invokes [StartContentModeration](https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartContentModeration.html) API and based on the size of the video it take some time for the Content Moderation job to finish. Once it is finished it generates a JobID and that is passed to Simple Notification Service to Trigger the next Lambda function that invokes the GetContentModeration API. It also has the function to create an Elemental Media convert job to convert the video into frames that will be required to run a custom Rekognition model.
+This Lambda function invokes [StartContentModeration](https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartContentModeration.html) API which starts asynchronous detection of inappropriate, unwanted, or offensive content in a stored video. Once the job is successfully submitted, a JobID is returned back to the user. In order to track the completion status, we use a notification channel using Simple Notification Service to Trigger the next Lambda function to execute the [GetContentModeration](https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetContentModeration.html) API to retrieve the results.
 
 Please find the JobID output from the Lambda function which is passed to SNS.
 
@@ -19,39 +19,5 @@ Please find the JobID output from the Lambda function which is passed to SNS.
 		"RetryAttempts": 0
 	}
 }
-```
-
-  As mentioned, Once the JobID is generated the SNS triggers the second Lambda function Lambda2 and it invokes the GetContentModeration API. I have quoted the sample output of the function when the video contains the Moderation Labels and when a moderation label is detected the Video is moved to a different Destination bucket which is further passed for a human review.
-
-```
-[{
-		"Timestamp": 66,
-		"ModerationLabel": {
-			"Confidence": 98.96820831298828,
-			"Name": "Barechested Male",
-			"ParentName": "Suggestive"
-		}
-	}, {
-		"Timestamp": 66,
-		"ModerationLabel": {
-			"Confidence": 98.96820831298828,
-			"Name": "Suggestive",
-			"ParentName": ""
-		}
-	}, {
-		"Timestamp": 566,
-		"ModerationLabel": {
-			"Confidence": 97.36837768554688,
-			"Name": "Barechested Male",
-			"ParentName": "Suggestive"
-		}
-	}, {
-		"Timestamp": 566,
-		"ModerationLabel": {
-			"Confidence": 97.36837768554688,
-			"Name": "Suggestive",
-			"ParentName": ""
-		}
-	}]
 ```
 
