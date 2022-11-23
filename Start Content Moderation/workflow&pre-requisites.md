@@ -51,6 +51,7 @@ Please find the JobID output from the Lambda function which is passed to SNS.
 			"Confidence": 97.36837768554688,
 			"Name": "Suggestive",
 			"ParentName": ""
-		}]
+		}
+	}]
 ```
 
