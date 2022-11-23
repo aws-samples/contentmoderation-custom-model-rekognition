@@ -1,8 +1,11 @@
-**Workflow and Outputs**
+###**Workflow**
+
+####**Pre-requisities :**
+1. 
 
 This section accomodates 2 parts :
 1. Start an asynchronous job to detect inappropriate, unwanted, or offensive content in a stored video using [StartContentModeration](https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartContentModeration.html) API.
-2. Convert video into frames using a Transcoding job using [CreateJob](https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html#jobspost) API call
+2. Convert video into frames using a Transcoding job using [CreateJob](https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html#jobspost) API call.
 
 Workflow :
 
@@ -27,4 +30,6 @@ Sample output of StartContentModeration API :
 }
 ```
 
-2. Cre
+2. Since Rekongition custom labels can only be tested against images, we break the input video into frame for the Plagiarism detection. [Elemental Mediaconvert](https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html) is a a file-based video processing service that provides scalable video processing. In our case, we use the [CreateJob](https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html#jobspost) API call to submit a transcoding job to convert video into frames.
+
+Please refer [documentation](https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html#jobs-request-examples) for the payload options and settings.
