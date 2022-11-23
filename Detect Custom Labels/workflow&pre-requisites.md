@@ -32,6 +32,6 @@ Given below is the sample output of this Lambda function when the uploaded video
 		'RetryAttempts': 0
 	}
 }
-```
+``` 
 
 So if any of the trained logos (Moj, sharechat or tiktok ) are detected the video is moved to another destination Bucket.
