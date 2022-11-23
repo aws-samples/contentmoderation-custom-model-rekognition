@@ -1,6 +1,6 @@
 **Workflow and Outputs**
 
-1.This Lambda function invokes StartContentModeration API and based on the size of the video it take some time for the Content Moderation job to finish. Once it is finished it generates a JobID and that is passed to Simple Notification Service to Trigger the next Lambda function that invokes the GetContentModeration API. It also has the function to create an Elemental Media convert job to convert the video into frames that will be required to run a custom Rekognition model.
+This Lambda function invokes [StartContentModeration](https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartContentModeration.html) API and based on the size of the video it take some time for the Content Moderation job to finish. Once it is finished it generates a JobID and that is passed to Simple Notification Service to Trigger the next Lambda function that invokes the GetContentModeration API. It also has the function to create an Elemental Media convert job to convert the video into frames that will be required to run a custom Rekognition model.
 
 Please find the JobID output from the Lambda function which is passed to SNS.
 
